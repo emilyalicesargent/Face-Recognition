@@ -14,7 +14,7 @@ for _ in images:
     image_path = path + _
     encoding = fr.face_encodings(image)[0]
 
-    known_name_encodings.apend(encoding)
+    known_name_encodings.append(encoding)
 
 known_names.append(os.path.splitext(os.path.basename(image_path))[0].capitalize())
 
@@ -45,4 +45,4 @@ for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodi
 cv2.imshow("Result", image)
 cv2.imwrite("./output.jpg", image)
 cv2.waitKey(0)
-cv2.detsroyAllWindows()
+cv2.destroyAllWindows()
